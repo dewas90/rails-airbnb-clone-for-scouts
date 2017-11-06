@@ -10,9 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20171106140028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "host_id"
+    t.integer  "camp_site_id"
+    t.string   "status"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["camp_site_id"], name: "index_bookings_on_camp_site_id", using: :btree
+    t.index ["host_id"], name: "index_bookings_on_host_id", using: :btree
+    t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
+  end
+
+  create_table "camp_sites", force: :cascade do |t|
+    t.integer  "host_id"
+    t.string   "title"
+    t.string   "description"
+    t.integer  "capacity"
+    t.string   "category"
+    t.string   "address"
+    t.string   "picture"
+    t.integer  "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["host_id"], name: "index_camp_sites_on_host_id", using: :btree
+  end
+
+  create_table "hosts", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.string   "bank_account"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["profile_id"], name: "index_hosts_on_profile_id", using: :btree
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "birth_date"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.string   "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookings", "camp_sites"
+  add_foreign_key "bookings", "hosts"
+  add_foreign_key "bookings", "profiles"
+  add_foreign_key "camp_sites", "hosts"
+  add_foreign_key "hosts", "profiles"
+  add_foreign_key "profiles", "users"
 end
