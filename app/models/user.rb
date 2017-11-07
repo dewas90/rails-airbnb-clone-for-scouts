@@ -1,7 +1,11 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  has_one :profile
 
-   validates :email, presence: true, format: { with: /\A.*@.*\.com\z/ }
-   validates :password, presence: true, length: { in: 4..20 }
-   validates :password, :format => {:with => /^[([a-z]|[A-Z])0-9_-]{6,40}$/, message: "Your password must be at least 6 characters and include at least one number and one letter."}
+  validates :email, presence: true
+  validates :password, presence: true, length: { in: 4..20 }
 
 end
