@@ -1,5 +1,34 @@
 <h1>This is the Camp Site INDEX</h1>
 
-<% @camp_sites.each do |camp_site| %>
-   <h2><%= camp_site.title %></h2>
-<% end %>
+<div class="map-layout">
+  <div class="cards-container">
+    <div class="row">
+        <% @camp_sites.each do |camp_site| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <%= render "shared/card" %>
+          </div>      
+        <% end %>
+    </div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<!-- Gmaps js: building the map -->
+<script>
+  function initMap() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 52.5206, lng: 13.4098},
+      scrollwheel: false,
+      zoom: 8
+    });
+  }
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Gmaps JavaScript -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
+    </script>

@@ -40,7 +40,7 @@ class CampSitesController < ApplicationController
   private
 
   def set_camp_sites
-    @camp_site = Camp_site.find(params[:id])
+    @camp_site = CampSite.find(params[:id])
   end
 
   def camp_sites_params
