@@ -1,2 +1,5 @@
-<h1>CampSites#index</h1>
-<p>Find me in app/views/camp_sites/index.html.erb</p>
+<h1>This is the Camp Site INDEX</h1>
+
+<% @camp_sites.each do |camp_site| %>
+   <h2><%= camp_site.title %></h2>
+<% end %>
