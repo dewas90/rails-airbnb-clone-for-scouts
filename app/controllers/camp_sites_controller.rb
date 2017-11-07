@@ -1,5 +1,7 @@
 class CampSitesController < ApplicationController
 
+  protect_from_forgery
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_camp_sites , only: [:show, :edit, :destroy]
 
   def index
