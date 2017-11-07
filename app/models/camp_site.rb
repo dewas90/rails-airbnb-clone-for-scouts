@@ -8,6 +8,6 @@ class CampSite < ApplicationRecord
   validates :capacity, presence: true
   validates :category, presence: true
   validates :address, presence: true
-  validates :picture, presence: true
+  validates :photo, presence: true
   validates :price, presence: true
 end
