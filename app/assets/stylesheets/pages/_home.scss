@@ -1,1 +1,22 @@
-// Specific CSS for your home-page
+@import "components/_banner";
+
+.btn-div {
+	margin: 10px 0px 0px  0px 
+}
+
+.btn-primary {
+  color: white;
+  padding: 20px 30px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #f49000;;
+  transition: background 0.3s ease;
+   opacity: 0.8
+}
+
+.btn-primary:hover {
+  opacity: 1;
+  background: #f49000;;
+  text-decoration: none;
+  color: white;
+}
