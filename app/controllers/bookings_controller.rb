@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_bookings , only: [:show]
+  before_action :set_bookings , only: [:show, :approve, :cancel]
 
   def index
     @bookings = Booking.all
@@ -11,13 +11,19 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    redirect_to booking_path(@booking)
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   def approve
+    @booking.status = "approved"
   end
 
   def cancel
+    @booking.cancel = "canceled"
   end
 
   private
