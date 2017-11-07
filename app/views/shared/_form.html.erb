@@ -1,0 +1,23 @@
+
+<% if @camp_site.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @camp_site.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= simple_form_for [@camp_site] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :capacity %>
+  <%= f.input :category %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :picture %>
+  <%= f.submit "let's go", class: "btn" %>
+  <!-- # render 'shared/button'  -->
+<% end %>
+
+
+

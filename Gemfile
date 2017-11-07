@@ -3,7 +3,7 @@ ruby '2.3.5'
 
 # gem adding authentication
 gem 'devise'
-
+gem 'cloudinary'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'

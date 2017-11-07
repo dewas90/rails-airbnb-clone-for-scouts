@@ -10,11 +10,11 @@ class CampSitesController < ApplicationController
   end
 
   def new
-    @camp_site = Camp_site.new
+    @camp_site = CampSite.new
   end
 
   def create
-    @camp_site = Camp_site.new(camp_site_params)
+    @camp_site = CampSite.new(camp_site_params)
     redirect_to camp_site_path(@camp_site)
   end
 
