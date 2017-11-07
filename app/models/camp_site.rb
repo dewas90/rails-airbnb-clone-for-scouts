@@ -1,4 +1,5 @@
 class CampSite < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :host
   has_many :bookings
 

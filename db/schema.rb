@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171107100635) do
     t.integer  "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "photo"
     t.index ["host_id"], name: "index_camp_sites_on_host_id", using: :btree
   end
 
