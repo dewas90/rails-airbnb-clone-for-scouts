@@ -11,6 +11,7 @@ gem 'puma'
 gem 'rails', '5.0.6'
 gem 'redis'
 gem 'webpacker', '~> 3.0'
+gem 'carrierwave', '~> 0.11.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
