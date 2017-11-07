@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20171107140606) do
     t.integer  "profile_id"
     t.integer  "host_id"
     t.integer  "camp_site_id"
-    t.string   "status"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "status",       default: "pending"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["camp_site_id"], name: "index_bookings_on_camp_site_id", using: :btree
     t.index ["host_id"], name: "index_bookings_on_host_id", using: :btree
     t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
