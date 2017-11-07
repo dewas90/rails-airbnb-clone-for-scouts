@@ -1,6 +1,6 @@
 class CampSitesController < ApplicationController
 
-  before_action :set_camp_sites , only: [:show, :destroy, :edit]
+  before_action :set_camp_sites , only: [:show, :edit, :destroy]
 
   def index
     @camp_sites = Camp_site.all
@@ -15,7 +15,11 @@ class CampSitesController < ApplicationController
 
   def create
     @camp_site = Camp_site.new(camp_site_params)
-    redirect_to camp_site_path(@camp_site)
+    if @camp_site.save
+      redirect_to camp_site_path(@camp_site)
+    else
+      render :new
+    end
   end
 
   def edit
