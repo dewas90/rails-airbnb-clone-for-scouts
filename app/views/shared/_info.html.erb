@@ -76,7 +76,7 @@
       <div class="profile text-center">
         <div class="main">
           <div class="main-content">
-            <img <%= cl_image_path current_user.profile.photo %> alt="" width="150" class="img-circle">
+            <img src=" <%= cl_image_path current_user.profile.photo%> " alt="" width="150" class="img-circle">
             <h2><%= @camp_site.host.profile.first_name %></h2>
             <p><%= @camp_site.address %></p>
             <%=  simple_form_for [@camp_site, Booking.new] do |f| %>
