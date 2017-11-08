@@ -1,2 +1,39 @@
-<h1>This is to see one booking</h1>
-<p> Your are looking at booking n° <%= @booking.id %> and it is <%= @booking.status %> </p>
+
+<style>
+  .status h3{
+    margin:0px;
+    padding: 5px;
+    color: white;
+  }
+  .card {
+    margin: 0px;
+  }
+</style>
+
+<% if @booking.status === "approved" then %>
+<style>
+  .status{
+    background: #ADD100;
+    background: -webkit-linear-gradient(to right, #7B920A, #ADD100);
+    background: linear-gradient(to right, #7B920A, #ADD100);
+
+  }
+</style>
+<% else %>
+<style>
+  .status{
+    background: #fe8c00;
+    background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+    background: linear-gradient(to right, #f83600, #fe8c00);
+  }
+</style>
+<% end %>
+
+
+
+
+<%= render 'shared/card', camp_site: @booking.camp_site %>
+<div class="status ">
+  <h3>you have booked <%= @booking.camp_site.title %> and your request is <%= @booking.status %></h3>
+</div>
+
