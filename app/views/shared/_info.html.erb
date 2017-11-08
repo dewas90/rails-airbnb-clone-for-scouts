@@ -69,7 +69,7 @@
 
 
 <div class="navbar-minimalist">
-      <img src="images/logo.png">
+
     </div>
 
     <div class="container">
@@ -79,7 +79,9 @@
             <img src="images/seb.jpeg" alt="" width="150" class="img-circle">
             <h2><%= @camp_site.host.profile.first_name %></h2>
             <p><%= @camp_site.address %></p>
-            <%= link_to "BOOK NOW", camp_site_bookings_path(:camp_site_id), class: 'btn' %>
+            <%=  simple_form_for [@camp_site, Booking.new] do |f| %>
+              <%= f.submit "BOOK NOW", class: "btn" %>
+            <% end %>
           </div>
         </div>
         <div class="stat">
