@@ -33,9 +33,8 @@
     <!-- Links - LogedOut -->
 
     <!-- Links - LogedOut -->
-    <%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "New user", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Existing user", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "sing-up" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link", id: "sign-up" %>
+    <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "log-in" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -43,8 +42,8 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Log In</a></li>
-        <li><a href="#">Sign up</a></li>
+        <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link", id: "sign-up" %></li>
+        <li><%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "log-in" %></li>
       </ul>
     </div>
   </div>
