@@ -5,7 +5,7 @@
     <h2> <%= camp_site.title %> </h2>
     <p> <%= camp_site.address %> </p>
   </div>
-  <img class="card-user" src=" <%= cl_image_path current_user.profile.photo%> " >
+  <img class="card-user" src=" <%= cl_image_path camp_site.host.profile.photo %> " >
   <%= link_to "", camp_site_path(camp_site), class: "card-link" %>
 
  <!--  <div class="card_footer"> <a href="#"></a></div> -->
