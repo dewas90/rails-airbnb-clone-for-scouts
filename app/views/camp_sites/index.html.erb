@@ -6,7 +6,7 @@
     <div class="row">
         <% @camp_sites.each do |camp_site| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <%= render "shared/card" %>
+            <%= render "shared/card" , camp_site: camp_site %>
           </div>
         <% end %>
     </div>
