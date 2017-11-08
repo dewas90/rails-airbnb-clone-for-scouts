@@ -100,6 +100,7 @@ input:checked + label {
 .message-status {
   font-size: 14px;
   font-weight: bold;
+  min-width: 70px;
 }
 .status.accepted {
   color: #04A366;
@@ -111,8 +112,25 @@ input:checked + label {
   color: #bbbbbb;
 }
 
-
-
+// accept/decline buttons
+.btn-medium {
+  padding: 10px 15px;
+  opacity: 0.6;
+  height: 24px;
+}
+.btn-medium:hover {
+  opacity: 1;
+}
+.btn-approve{
+  background: url(success.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.btn-cancel{
+  background: url(error.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
 
 
 
