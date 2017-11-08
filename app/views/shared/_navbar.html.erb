@@ -20,9 +20,10 @@
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <%= link_to "Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link" , id: "dashboard"%>
+    <%= link_to "Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link"%>
     <%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Become a Host", new_host_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%>
   </div>
 
   <% else %>
