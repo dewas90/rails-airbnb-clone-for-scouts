@@ -1,11 +1,10 @@
 <div class="profile-card-body">
-  <img class="avatar-large avatar-profile" src="http://via.placeholder.com/100x100">
+  <img class="avatar-large avatar-profile" src=" <%= cl_image_path current_user.profile.photo %> " >
   <div class="profile-info">
-    <h3><%= @profile.first_name %> <%= @profile.last_name %></h3>
-    <p><%= @profile.user.email %></p>
-    <p><%= @profile.user.password %></p>
-    <p><%= @profile.birth_date %></p>
-    <p><%= @profile.gender %></p>
+    <h3><%= current_user.profile.first_name %> <%= current_user.profile.last_name %></h3>
+    <p><%= current_user.profile.user.email %></p>
+    <p><%= current_user.profile.birth_date %></p>
+    <p><%= current_user.profile.gender %></p>
 
     <button type="button" class="btn btn-outline-secondary">Edit your info</button>
   </div>
