@@ -4,19 +4,5 @@
 } </style>
 <div class="container">
 
-<%= render 'shared/form' %>
+<%= render 'shared/formcamp' %>
 </div>
-<ul>
-    <li><%= @camp_site.host.profile.first_name %></li>
-    <li><%= @camp_site.host.profile.last_name %></li>
-    <li><%= @camp_site.host.profile.avatar %></li>
-    <li><%= @camp_site.description %></li>
-    <li><%= @camp_site.capacity %></li>
-    <li><%= @camp_site.category %></li>
-    <li><%= @camp_site.address %></li>
-    <li><%= @camp_site.price %></li>
-</ul>
-<% @btn_text = "BOOK NOW" %>
-<%= render 'shared/button' %>
-
- <p><%= link_to 'all camp sites', camp_sites_path, class: "btn" %></p>
