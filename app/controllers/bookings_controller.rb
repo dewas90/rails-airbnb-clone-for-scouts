@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :set_bookings , only: [:show, :approve, :cancel]
 
   def index
@@ -10,7 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+   create_booking
+
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -27,12 +28,17 @@ class BookingsController < ApplicationController
   end
 
   private
+  def create_booking
+   @camp_site = CampSite.find(params[:camp_site_id])
+    @host = @camp_site.host
+    @booking = Booking.new(camp_site:@camp_site, host:@host, profile:current_user.profile)
+  end
 
   def set_bookings
     @booking = Booking.find(params[:id])
   end
 
-  def bookings_params
-    params.require(:bookings).permit(:profile_id, :host_id, :camp_site_id)
+  def booking_params
+    params.require(:booking).permit(:camp_site_id)
   end
 end
