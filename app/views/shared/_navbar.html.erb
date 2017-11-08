@@ -12,15 +12,18 @@
 
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link" , id: "dashboard"%>
+    <% if !current_user.profile.nil? %>
+    <%= link_to "Dashboard", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" , id: "dashboard"%>
+    <% end %>
+
     <%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Become a Host", hosts_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%>
+    <%= link_to "Become a Host", new_host_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%>
     <div class="dropdown">
       <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Profile</a></li>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%></li>
-        
+
       </ul>
     </div>
   </div>
@@ -29,7 +32,9 @@
      <div id ="dropdown-combined" class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link", id: "dashboard"%></li>
+        <% if !current_user.profile.nil? %>
+        <li><%= link_to "Dashboard", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link", id: "dashboard"%></li>
+        <% end %>
         <li><%= link_to "Become a Host", new_host_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%></li>
         <li><%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
@@ -42,7 +47,7 @@
       </ul>
     </div>
   </div>
- 
+
 
   <% else %>
 
