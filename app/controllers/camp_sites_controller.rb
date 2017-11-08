@@ -16,7 +16,8 @@ class CampSitesController < ApplicationController
   end
 
   def create
-    @camp_site = CampSite.new(camp_site_params)
+    @camp_site = CampSite.new(camp_sites_params)
+    @camp_site.host = current_user.profile.host
     if @camp_site.save
       redirect_to camp_site_path(@camp_site)
     else
@@ -44,6 +45,6 @@ class CampSitesController < ApplicationController
   end
 
   def camp_sites_params
-    params.require(:camp_sites).permit(:title, :description, :capacity, :category, :address, :picture, :price)
+    params.require(:camp_site).permit(:title, :description, :capacity, :category, :address, :photo, :price)
   end
 end

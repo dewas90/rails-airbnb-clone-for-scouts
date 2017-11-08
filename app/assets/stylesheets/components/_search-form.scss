@@ -1,20 +1,22 @@
+.form-control {
+  margin-left: 15px;
+}
+
 .btn-div {
-	margin: 10px 0px 0px  0px 
+	margin: 0px 0px 0px  0px 
 }
 
-.btn-primary {
-  color: white;
+#search-btn {
   padding: 20px 30px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #f49000;;
-  transition: background 0.3s ease;
-   opacity: 0.8
+  margin: 0px;
 }
 
-.btn-primary:hover {
-  opacity: 1;
-  background: #f49000;;
-  text-decoration: none;
-  color: white;
+.col-xs-12.col-sm-12.content-text {
+	h1 {
+		font-size: 35px;
+	}
+
+	p {
+		font-size: 15px;
+	}
 }

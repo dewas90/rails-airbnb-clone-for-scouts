@@ -1,0 +1,54 @@
+h4{
+  font-size: 16px;
+  color: #7D7979;
+  font-family: "Varela", "Helvetica", "sans-serif";
+  text-transform: uppercase;
+  text-align: left;
+}
+
+section {
+display: none;
+padding: 20px 0 0;
+border-top: 1px solid #ddd;
+}
+
+input {
+display: none;
+}
+
+label {
+display: inline-block;
+margin: 0 0 -1px;
+padding: 15px 25px;
+font-weight: 300;
+text-align: center;
+color: #bbb;
+border: 1px solid transparent;
+}
+
+label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid #555;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2{
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
