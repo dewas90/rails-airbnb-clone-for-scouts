@@ -1,9 +1,13 @@
    <%= render 'shared/navbar' %>
    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'back.jpg' %>);">
-   	<div class="banner-content">
-   		<h1>Project W</h1>
-   		<p>The best camping sites for your Scout Team</p>
+   	<div class=" col-xs-9 col-sm-9 banner-content">
+   		<div class="col-xs-12 col-xs-12 content-text">
+            <h1>Project W</h1>
+   		    <p>The best camping sites for your Scout Team</p>
+         </div>
+         <div class="col-xs-12 col-xs-12 content-form">
    		<%= render 'shared/search-form' %>
+         </div>
    	</div>
    </div>
    <div class="footer">
