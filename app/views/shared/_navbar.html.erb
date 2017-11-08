@@ -19,7 +19,8 @@
       <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Profile</a></li>
-        <li><a href="#">Log Out</a></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%></li>
+        
       </ul>
     </div>
   </div>
@@ -29,7 +30,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to "Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link", id: "dashboard"%></li>
-        <li><%= link_to "Become a Host", hosts_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%></li>
+        <li><%= link_to "Become a Host", new_host_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%></li>
         <li><%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
@@ -37,7 +38,7 @@
       <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Profile</a></li>
-        <li><a href="#">Log Out</a></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%></li>
       </ul>
     </div>
   </div>
