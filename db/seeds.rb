@@ -11,6 +11,17 @@ host = Host.create(profile_id: profile.id, bank_account: "BE50 1000 1000 1000")
 
 # Camp_site
 campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+campsite = CampSite.create(host_id: host.id, title: "title_test_2", description: "description_test_2", capacity: 25, category: "category_test_2", address: "address_test_2", picture: "picture_test_2", price: 10)
+
+
 
 # Booking
 booking = Booking.create(profile_id: profile.id, host_id: host.id, camp_site_id:campsite.id)
