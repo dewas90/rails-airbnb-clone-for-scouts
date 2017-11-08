@@ -1,4 +1,17 @@
-<h1>This should show one profile page</h1>
-
-<h2>First Name: <%= @profile.first_name %> </h2>
-<h2>Last Name: <%= @profile.last_name %></h2>
+<div class="dashboard-layout">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="profile-card">
+        <%= render "shared/profile" %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="bookings-card">
+        <%= render "shared/bookings" %>
+      </div>
+      <div class="camp-sites-card">
+        <%= render "shared/camp-sites" %>
+      </div>
+    </div>
+  </div>
+</div>
