@@ -1,0 +1,112 @@
+<style>
+  .profile {
+  display: grid;
+  grid-template-columns: 350px 1fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+  height: calc(100vh - 70px);
+  padding: 30px;
+}
+.profile .main {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+}
+.profile .description {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 3;
+}
+.main, .description, .stat {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 50px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 940px) {
+  .profile {
+    display: block;
+  }
+}
+
+/* Fonts and colors */
+.profile h2 {
+  font-size: 22px;
+}
+.profile h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.profile p {
+  color: rgba(0,0,0,0.6);
+}
+.profile .btn {
+
+}
+.profile .btn:hover {
+
+}
+.stat h3 {
+  color: #37B686;
+  font-size: 28px;
+}
+.stat p {
+  color: rgba(0,0,0,0.25);
+  font-size: 19px;
+}
+.description h3 {
+  color: rgba(0,0,0,0.9);
+  font-size: 21px;
+  font-weight: normal;
+}
+.description p {
+  color: rgba(0,0,0,0.5);
+  font-weight: lighter;
+}
+</style>
+
+
+
+
+<div class="navbar-minimalist">
+      <img src="images/logo.png">
+    </div>
+
+    <div class="container">
+      <div class="profile text-center">
+        <div class="main">
+          <div class="main-content">
+            <img src="images/seb.jpeg" alt="" width="150" class="img-circle">
+            <h2><%= @camp_site.host.profile.first_name %></h2>
+            <p><%= @camp_site.address %></p>
+            <%= link_to "BOOK NOW", camp_site_bookings_path(:camp_site_id), class: 'btn' %>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-content">
+            <h3><%= camp_site.price %></h3>
+            <p>Price</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-content">
+            <h3><%= camp_site.capacity %></h3>
+            <p>capacity</p>
+          </div>
+          </div>
+        <div class="stat">
+          <div class="stat-content">
+            <h3><%= @camp_site.category %></h3>
+            <p>category</p>
+          </div>
+          </div>
+        <div class="description">
+          <div class="description-content">
+            <h3>More about the camp</h3>
+            <p class="text-justify">
+              <%= @camp_site.description %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
