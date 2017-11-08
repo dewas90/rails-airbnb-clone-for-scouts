@@ -17,6 +17,7 @@ class CampSitesController < ApplicationController
 
   def create
     @camp_site = CampSite.new(camp_sites_params)
+    @camp_site.host = current_user.profile.host
     if @camp_site.save
       redirect_to camp_site_path(@camp_site)
     else
