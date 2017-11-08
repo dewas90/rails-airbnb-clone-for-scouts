@@ -1,13 +1,16 @@
 <div class="profile-card-body">
-  <img class="avatar-large avatar-profile" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+  <img class="avatar-large avatar-profile" src="http://via.placeholder.com/100x100">
   <div class="profile-info">
-    <h3>First & Last Name</h3>
-    <p>breknlrtkgnzr</p>
-    <p>breknlrtkgnzr</p>
-    <p>breknlrtkgnzr</p>
-    <p>breknlrtkgnzr</p>
-    <p>breknlrtkgnzr</p>
+    <h3><%= @profile.first_name %> <%= @profile.last_name %></h3>
+    <p><%= @profile.user.email %></p>
+    <p><%= @profile.user.password %></p>
+    <p><%= @profile.host.bank_account %></p>
+    <p><%= @profile.birth_date %></p>
+    <p><%= @profile.gender %></p>
+
+    <button type="button" class="btn btn-outline-secondary">Edit your info</button>
   </div>
 </div>
+
 
 
