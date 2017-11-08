@@ -1,15 +1,3 @@
-<h1> - <%= @camp_site.title %> - </h1>
-<!-- <p>< %= cl_image_tag @camp_site.photo, height: 300, width: 400, crop: :fill %></p> -->
-<ul>
-    <li><%= @camp_site.host.profile.first_name %></li>
-    <li><%= @camp_site.host.profile.last_name %></li>
-    <li><%= @camp_site.host.profile.avatar %></li>
-    <li><%= @camp_site.description %></li>
-    <li><%= @camp_site.capacity %></li>
-    <li><%= @camp_site.category %></li>
-    <li><%= @camp_site.address %></li>
-    <li><%= @camp_site.price %></li>
-</ul>
-<h3>Book this camp site</h3>
-<!-- <p>< %= render "shared/booking_form" % ></p> -->
- <p><%= link_to 'Back to all camp sites', camp_sites_path %></p>
+<%= render 'shared/card', camp_site: CampSite.find(params[:id]) %>
+<%= render 'shared/info', camp_site: CampSite.find(params[:id]) %>
+

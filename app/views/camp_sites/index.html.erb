@@ -1,14 +1,13 @@
-<%= render 'shared/navbar' %>
-<h1>This is the Camp Site INDEX</h1>
-
 <div class="map-layout">
-  <div class="cards-container">
-    <div class="row">
-        <% @camp_sites.each do |camp_site| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <%= render "shared/card" %>
-          </div>
-        <% end %>
+  <div class="container">
+    <div class="cards-container">
+      <div class="row">
+          <% @camp_sites.each do |camp_site| %>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <%= render "shared/card" , camp_site: camp_site %>
+              </div>
+          <% end %>
+      </div>
     </div>
   </div>
   <div id="map"></div>
@@ -33,4 +32,3 @@
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
     </script>
-<%= render 'shared/footer' %>
