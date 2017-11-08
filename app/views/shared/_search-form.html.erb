@@ -1,7 +1,7 @@
 <form action="#">
    			<div class="form-group">
-   				<label for="city">Select City</label>
-   				<input type="city" class="form-control" id="city" placeholder="Brussels">
+   				<label for="city">Select a camp region</label>
+   				<input type="city" class="form-control" id="city" placeholder="Wallonie">
    			</div>
    			<div class="row">
    				<!-- <div class="col-xs-3">
@@ -16,6 +16,7 @@
    						<input type="text" class="form-control" id="end" placeholder="10-nov-17">
    					</div>
    				</div> -->
+
    				<div class="col-xs-3">
    					<div class="form-group">
    						<label for="price">Price/Night</label>
@@ -54,8 +55,8 @@
    				</div>
    				<div class="col-xs-3">
    					<div class="form-group btn-div">
-   						<input type="submit" value="Search" class="btn btn-primary">
+              <%= link_to 'All sites', camp_sites_path, class: "btn" %>
    					</div>
    				</div>
-   			</div>  
+   			</div>
    		</form>

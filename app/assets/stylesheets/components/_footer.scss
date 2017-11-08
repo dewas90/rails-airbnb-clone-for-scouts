@@ -1,0 +1,138 @@
+// .footer {
+//   background: #F4F4F4;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   height: 100px;
+//   padding: 0px 50px;
+//   color: rgba(0,0,0,0.3);
+// }
+// .footer-links {
+//   display: flex;
+//   align-items: center;
+// }
+// .footer-links a {
+//   color: black;
+//   opacity: 0.15;
+//   text-decoration: none;
+//   font-size: 24px;
+//   padding: 0px 10px;
+// }
+// .footer-links a:hover {
+//   opacity: 1;
+// }
+// .footer .fa-heart {
+//   color: #D23333;
+// }
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.footer-block-wrap .footer-block {
+    display: inline-block;
+    vertical-align: top;
+    padding: 33px 0 0;
+}
+
+
+.footer-block {
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 7px;
+    
+    ul {
+	list-style: none;
+    }
+}	
+
+
+.white-link{
+    font-size: 14px;
+    color: #555;
+}
+
+ .blue-link{
+    font-size: 10px;
+}
+
+.footer .footer-form {
+    color: #ca4c55;
+    background-color: #394652;
+    border-radius: 0 0 10px 10px;
+    min-height: 143px;
+    padding: 27px 7px 8px;
+    max-width: 396px;
+    float: left;
+    margin: 0 0 0 12%;
+    width: 100%;
+}
+
+.footer .footer-form__title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 24px;
+}
+
+.footer .footer-form__text {
+    color: #a3c4d3;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 21px;
+}
+
+.input-group input {
+    height: 46px;
+    line-height: normal;
+    padding-left: 21px;
+    border-radius: 8px 0 0 8px;
+}
+
+.form-email {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
+
+.input-group .form-control:focus {
+	z-index: 0 !important;
+}
+
+
+.btn-default {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    background: #00c6ff;
+    margin: 0px;
+    border-radius: 0 8px 8px 0;
+    height: 46px;
+    line-height: normal;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    min-width: 124px;
+}
+
