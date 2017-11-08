@@ -1,22 +1,27 @@
+@media only screen and (max-width: 500px) {
+  label {
+    font-size: 12px !important;
+    padding-left: 10px !important;
+}
+     #category {
+ 	 font-size: 12px !important;
+ 	 padding: 10px -1px 10px 2px !important;
+}
+  }
+
 .form-control {
   margin-left: 15px;
 }
 
 .btn-div {
 	margin: 0px 0px 0px  0px 
+
 }
 
 #search-btn {
   padding: 20px 30px;
   margin: 0px;
+  white-space: normal !important;
 }
 
-.col-xs-12.col-sm-12.content-text {
-	h1 {
-		font-size: 35px;
-	}
-
-	p {
-		font-size: 15px;
-	}
-}
+// 
