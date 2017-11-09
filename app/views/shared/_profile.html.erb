@@ -1,11 +1,15 @@
 <div class="profile-card-body">
   <img class="avatar-large avatar-profile" src=" <%= cl_image_path current_user.profile.photo %> " >
   <div class="profile-info">
-    <h3><%= current_user.profile.first_name %> <%= current_user.profile.last_name %></h3>
-    <p><%= current_user.profile.user.email %></p>
-    <p><%= current_user.profile.birth_date %></p>
-    <p><%= current_user.profile.gender %></p>
-
+    <h3>Your profile</h3>
+    <hr>
+    <h4>Name: <%= current_user.profile.first_name %> <%= current_user.profile.last_name %> </h4>
+    <hr>
+    <h4>email: <%= current_user.profile.user.email %></h4>
+    <hr>
+    <h4>birth-date: <%= current_user.profile.birth_date %></h4>
+    <hr>
+    <h4>gender: <%= current_user.profile.gender %></h4>
     <div class="form-group btn-div">
       <%= link_to 'Edit your info', edit_profile_path, id: "search-btn", class: "btn" %>
     </div>
