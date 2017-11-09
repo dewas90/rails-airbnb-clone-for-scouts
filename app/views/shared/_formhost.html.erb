@@ -63,22 +63,21 @@ input[type="file"] {
 
 <div class="form_wrapper">
   <div class="container">
-<% if @host.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @host.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <% if @host.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% @host.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= simple_form_for [@host] do |f| %>
+    <%= f.input :bank_account %>
+    <%= f.submit "Start hosting!", class: "btn", id: "btn"%>
+    <!-- # render 'shared/button'  -->
   <% end %>
-
-  <%= simple_form_for [@host] do |f| %>
-  <%= f.input :bank_account %>
-  <%= f.submit "Start hosting!", class: "btn", id: "btn"%>
-  <!-- # render 'shared/button'  -->
-<% end %>
-</div>
+  </div>
 </div>
 
 
