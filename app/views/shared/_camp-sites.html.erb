@@ -3,7 +3,7 @@
 
   <% current_user.profile.host.camp_sites.each do |camp_site| %>
     <div class="message">
-      <img class="card-user" src="<%= cl_image_path camp_site.photo %>">
+      <img class="img-thumbnail" src="<%= cl_image_path camp_site.photos.first.path %>">
       <div class="message-body">
         <p><strong><%= camp_site.title %></strong></p>
         <p> <%= camp_site.address %> </p>
