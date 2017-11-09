@@ -3,7 +3,8 @@ class ProfilesController < ApplicationController
   before_action :set_profiles , only: [:show, :edit, :destroy]
 
   def show
-
+   @reservations = Booking.where(profile:current_user.profile)
+   @requests = Booking.where(host:current_user.profile.host)
   end
 
   def new
