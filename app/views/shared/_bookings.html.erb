@@ -9,7 +9,8 @@
   <section id="content1">
     <% @reservations.each do |reservation| %>
     <div class="message">
-      <img class="avatar-large" src=" <%= cl_image_path reservation.host.profile.photo %> ">
+
+      <img class="avatar-medium" src=" <%= cl_image_path reservation.host.profile.photo %> ">
       <div class="message-name">
         <h3><%= reservation.host.profile.first_name %></h3>
         <p><%= reservation.created_at %></p>
@@ -31,7 +32,8 @@
   <section id="content2">
     <% @requests.each do |request|  %>
     <div class="message">
-      <img class="avatar-large" src=" <%= cl_image_path request.profile.photo %> ">
+      <img class="avatar-medium" src=" <%= cl_image_path request.profile.photo %> ">
+
       <div class="message-name">
         <h3><%= request.profile.first_name%></h3>
         <p><%= request.created_at %></p>
