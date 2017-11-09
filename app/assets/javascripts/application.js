@@ -3,11 +3,10 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
-//= require_tree .
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-
+//= require_tree .
 $(document).ready(function(){
   $(".alert").delay(3000).slideUp();
 });
