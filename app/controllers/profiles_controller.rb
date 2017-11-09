@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
   before_action :set_profiles , only: [:show, :edit, :destroy]
 
   def show
+
   end
 
   def new
@@ -23,8 +24,12 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile.update(profile_params)
-    redirect_to profile_path(@profile)
+    updated_user = current_user.profile.update_attributes(profile_params)
+    if updated_user
+      redirect_to profile_path(current_user.profile)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -35,10 +40,10 @@ class ProfilesController < ApplicationController
   private
 
   def set_profiles
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find(current_user.profile.id)
   end
 
   def profile_params
-    params.require(:profile).permit(:user_id, :first_name, :last_name, :photo)
+    params.require(:profile).permit(:user_id, :first_name, :last_name, :photo, :gender, :birth_date)
   end
 end
