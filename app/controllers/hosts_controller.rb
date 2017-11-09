@@ -11,8 +11,9 @@ class HostsController < ApplicationController
 
   def create
     @host = Host.new(host_params)
+    @host.profile = current_user.profile
     if @host.save
-      redirect_to host_path(@host)
+      redirect_to new_camp_site_path
     else
       render :new
     end

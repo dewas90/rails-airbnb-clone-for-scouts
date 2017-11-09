@@ -4,9 +4,13 @@
 .profile-info{
   p{
     text-align: left;
+    padding-left: 70px;
+    padding-right: 70px;
   }
 }
 .profile-card-body{
   transform: translateY(-17%);
   padding: 10px 10px 10px 10px;
+  flex-grow: 1;
 }
+

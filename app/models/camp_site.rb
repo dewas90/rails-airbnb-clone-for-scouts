@@ -9,4 +9,5 @@ class CampSite < ApplicationRecord
   validates :category, presence: true
   validates :address, presence: true
   validates :price, presence: true
+  validates :photo, presence: true
 end
