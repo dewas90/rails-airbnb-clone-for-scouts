@@ -16,8 +16,10 @@
     <%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Become a Host", new_host_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%>
     <div class="dropdown">
-<!--       <img src="#" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
- -->      <%= cl_image_tag current_user.profile.photo, class: "avatar", id: "navbar-wagon-menu", data: { toggle: 'dropdown'} %>
+
+      <% if !current_user.profile.nil? %>
+      <%= cl_image_tag current_user.profile.photo, class: "avatar", id: "navbar-wagon-menu", data: { toggle: 'dropdown'} %>
+      <% end %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Profile</a></li>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%></li>
@@ -38,7 +40,9 @@
     </ul>
   </div>
   <div id ="dropdown-combined" class="dropdown">
-    <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+      <% if !current_user.profile.nil? %>
+      <li><%= link_to "Dashboard", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link", id: "dashboard"%></li>
+      <% end %>
     <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
       <li><a href="#">Profile</a></li>
       <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%></li>
