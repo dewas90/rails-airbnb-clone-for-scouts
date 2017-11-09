@@ -24,7 +24,9 @@
 // .footer .fa-heart {
 //   color: #D23333;
 // }
-
+footer {
+    background-color: #2ec5ff;
+}
 
 .container {
     margin-right: auto;
@@ -61,11 +63,12 @@
 
 .white-link{
     font-size: 14px;
-    color: #555;
+    color: #fff;
 }
 
  .blue-link{
     font-size: 10px;
+    color: #413434
 }
 
 #newsletter-form {
