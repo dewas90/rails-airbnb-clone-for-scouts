@@ -1,3 +1,37 @@
+<style>
+body {
+   background-image: linear-gradient(-225deg, rgba(120,2,6,0.6) 0%, rgba(6,17,97,0.6) 50%), url(<%= image_path 'img_bkg.jpg' %>);
+   }
+  .btn{
+    padding: 0px;
+
+  }
+  .form-control{
+      margin: 0px;
+    }
+  .control-label{
+    padding: 0px;
+  }
+  .help-block{
+    color: rgb(135, 0, 0);
+  }
+  .form-actions{
+    text-align:center;
+  }
+  h2 {
+    text-align:center;
+  }
+  .forms{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+</style>
+
+<div class="container">
+  <div class="forms">
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -10,8 +44,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "btn-mine" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
