@@ -1,34 +1,36 @@
 <div class="form_wrapper">
   <div class="container">
     <div class="forms">
-<% if @camp_site.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @camp_site.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% if @camp_site.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% @camp_site.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-      </ul>
+
+      <%= simple_form_for [@camp_site] do |f| %>
+      <%= f.input :title %>
+      <label class="control-label string required" for="camp_site_description">
+        <abbr title="required">*</abbr>
+        Description
+      </label>
+      <%= f.input :description, label: false, as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5, class: 'response-project'} %>
+      <%= f.input :capacity %>
+      <%= f.input :category %>
+      <%= f.input :address %>
+      <%= f.input :price %>
+      <%= f.input :photos, as: :attachinary %>
+      <%= f.submit "let's go", class: "btn", id: "btn"%>
+      <!-- # render 'shared/button'  -->
+      <% end %>
     </div>
-  <% end %>
+  </div>
+</div>
 
-  <%= simple_form_for [@camp_site] do |f| %>
-  <%= f.input :title %>
-  <label class="control-label string required" for="camp_site_description">
-    <abbr title="required">*</abbr>
-    Description
-  </label>
-  <%= f.input :description, label: false, as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5, class: 'response-project'} %>
-  <%= f.input :capacity %>
-  <%= f.input :category %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :attachinary %>
-  <%= f.submit "let's go", class: "btn", id: "btn"%>
-  <!-- # render 'shared/button'  -->
+<%= content_for(:after_js) do %>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU"></script>
 <% end %>
-</div>
-</div>
-</div>
-
-
 
