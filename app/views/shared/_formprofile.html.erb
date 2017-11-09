@@ -2,30 +2,27 @@
 <div class="form_wrapper">
   <div class="container">
     <div class="forms">
-<% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <% if @profile.errors.any? %>
+        <div id="error_explanation">
+        <ul>
+          <% @profile.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+       <% end %>
 
-  <%= simple_form_for [@profile] do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name%>
-  <%= f.input :gender %>
-  <%= f.input :birth_date %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "let's go", class: "btn", id: "btn"%>
+    <%= simple_form_for @profile do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name%>
+      <%= f.input :gender, collection: %w(Male Female Other) %>
+      <%= f.input :birth_date %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "let's go", class: "btn", id: "btn"%>
   <!-- # render 'shared/button'  -->
-<% end %>
+    <% end %>
+      
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
-
-
-

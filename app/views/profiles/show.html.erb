@@ -5,13 +5,16 @@
         <%= render "shared/profile" %>
       </div>
     </div>
+
     <div class="col-xs-12 col-sm-6">
       <div class="bookings-card">
         <%= render "shared/bookings" %>
       </div>
 
       <div class="camp-sites-card">
-        <%= render "shared/camp-sites" %>
+        <% if !current_user.profile.host.nil? %>
+          <%= render "shared/camp-sites" %>
+        <% end %>
       </div>
 
     </div>
