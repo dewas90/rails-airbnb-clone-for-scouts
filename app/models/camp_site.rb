@@ -1,5 +1,6 @@
 class CampSite < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
+  has_attachments :photos, maximum: 10
+  # mount_uploader :photo, PhotoUploader
   belongs_to :host
   has_many :bookings
 
@@ -9,5 +10,5 @@ class CampSite < ApplicationRecord
   validates :category, presence: true
   validates :address, presence: true
   validates :price, presence: true
-  validates :photo, presence: true
+  #validates :photos, presence: true
 end

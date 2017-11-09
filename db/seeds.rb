@@ -8,6 +8,7 @@
 # user = User.create(email: "carmen@test.com", password: "carmen")
 # profile = Profile.create(first_name: "carmen", last_name: "longo", user_id: user.id )
 
+
 # user = User.create(email: "diogo@test.com", password: "diogo")
 # profile = Profile.create(first_name: "diogo", last_name: "heinene", user_id: user.id )
 

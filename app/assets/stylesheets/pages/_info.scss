@@ -62,4 +62,8 @@
   color: rgba(0,0,0,0.5);
   font-weight: lighter;
 }
-
+.text-justify{
+  font-size: 16px;
+  overflow-y: scroll;
+  height: 150px;
+}
