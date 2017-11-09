@@ -7,9 +7,6 @@
 
   <% if user_signed_in? %>
 
-  <!------------- avatar -------->
-
-
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if !current_user.profile.nil? %>
@@ -19,28 +16,8 @@
     <%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Become a Host", new_host_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%>
     <div class="dropdown">
-      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Profile</a></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%></li>
-
-      </ul>
-    </div>
-  </div>
-
-   <div  class="navbar-wagon-item hidden-md hidden-lg">
-     <div id ="dropdown-combined" class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <% if !current_user.profile.nil? %>
-        <li><%= link_to "Dashboard", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link", id: "dashboard"%></li>
-        <% end %>
-        <li><%= link_to "Become a Host", new_host_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%></li>
-        <li><%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
-    </div>
-    <div id ="dropdown-combined" class="dropdown">
-      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+<!--       <img src="#" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+ -->      <%= cl_image_tag current_user.profile.photo, class: "avatar", id: "navbar-wagon-menu", data: { toggle: 'dropdown'} %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Profile</a></li>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%></li>
@@ -49,32 +26,53 @@
   </div>
 
 
-  <% else %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Links - LogedOut -->
-    <%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "New user", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Existing user", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "sing-up" %>
-
-
+  <div  class="navbar-wagon-item hidden-md hidden-lg">
+   <div id ="dropdown-combined" class="dropdown">
+    <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+      <% if !current_user.profile.nil? %>
+      <li><%= link_to "Dashboard", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link", id: "dashboard"%></li>
+      <% end %>
+      <li><%= link_to "Become a Host", new_host_path, class: "navbar-wagon-item navbar-wagon-link" , id: "become-host"%></li>
+      <li><%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+    </ul>
   </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link", id: "sign-up" %></li>
-        <li><%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "log-in" %></li>
-      </ul>
-    </div>
+  <div id ="dropdown-combined" class="dropdown">
+    <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+      <li><a href="#">Profile</a></li>
+      <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"%></li>
+    </ul>
   </div>
+</div>
 
 
-  <% end %>
+<% else %>
+
+<!-- Right Navigation -->
+<div class="navbar-wagon-right hidden-xs hidden-sm">
+
+  <!-- Links - LogedOut -->
+  <%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "New user", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Existing user", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "sing-up" %>
+
+
+</div>
+
+<!-- Dropdown list appearing on mobile only -->
+<div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="dropdown">
+    <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+      <li><%= link_to "All available camp sites", camp_sites_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link", id: "sign-up" %></li>
+      <li><%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "log-in" %></li>
+    </ul>
+  </div>
+</div>
+
+
+<% end %>
 
 </div>
