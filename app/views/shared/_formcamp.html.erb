@@ -1,15 +1,15 @@
 <div class="form_wrapper">
   <div class="container">
     <div class="forms">
-<% if @camp_site.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @camp_site.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% if @camp_site.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% @camp_site.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <%= simple_form_for [@camp_site] do |f| %>
   <%= f.input :title %>
@@ -30,5 +30,7 @@
 </div>
 </div>
 
-
+<%= content_for(:after_js) do %>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU"></script>
+<% end %>
 

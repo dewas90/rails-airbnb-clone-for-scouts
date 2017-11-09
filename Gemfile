@@ -1,6 +1,15 @@
 source 'https://rubygems.org'
 ruby '2.3.5'
 
+# geocoding
+gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 # multi images upload
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

@@ -4,6 +4,9 @@ class CampSite < ApplicationRecord
   belongs_to :host
   has_many :bookings
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   validates :title, presence: true, length: { in: 4..20 }
   validates :description, presence: true
   validates :capacity, presence: true
