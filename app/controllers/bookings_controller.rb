@@ -21,10 +21,14 @@ class BookingsController < ApplicationController
 
   def approve
     @booking.status = "approved"
+    @booking.save
+    redirect_to profile_path(current_user)
   end
 
   def cancel
-    @booking.cancel = "canceled"
+    @booking.status = "canceled"
+    @booking.save
+    redirect_to profile_path(current_user)
   end
 
   private

@@ -7,11 +7,13 @@
   <label for="tab2">Your guests</label>
 
   <section id="content1">
+    <% @reservations.each do |reservation| %>
     <div class="message">
-      <img class="avatar-medium" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+
+      <img class="avatar-medium" src=" <%= cl_image_path reservation.host.profile.photo %> ">
       <div class="message-name">
-        <h3>Gab Dehan</h3>
-        <p>10/07/17</p>
+        <h3><%= reservation.host.profile.first_name %></h3>
+        <p><%= reservation.created_at %></p>
       </div>
       <div class="message-body">
         <p><strong>I am not sure yet!</strong></p>
@@ -20,52 +22,21 @@
         </p>
       </div>
       <div class="message-status">
-        <p class="status pending">Pending</p>
-        <p class="price">€345</p>
+        <p class="status pending"><%= reservation.status %></p>
+        <p class="price">€ <%= reservation.camp_site.price %></p>
       </div>
     </div>
-    <div class="message">
-      <img class="avatar-medium" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
-        <h3>Gab Dehan</h3>
-        <p>10/07/17</p>
-      </div>
-      <div class="message-body">
-        <p><strong>I am not sure yet!</strong></p>
-        <p>
-          I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-        </p>
-      </div>
-      <div class="message-status">
-        <p class="status pending">Pending</p>
-        <p class="price">€345</p>
-      </div>
-    </div>
-    <div class="message">
-      <img class="avatar-medium" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
-        <h3>Gab Dehan</h3>
-        <p>10/07/17</p>
-      </div>
-      <div class="message-body">
-        <p><strong>I am not sure yet!</strong></p>
-        <p>
-          I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-        </p>
-      </div>
-      <div class="message-status">
-        <p class="status pending">Pending</p>
-        <p class="price">€345</p>
-      </div>
-    </div>
+    <% end %>
   </section>
 
   <section id="content2">
+    <% @requests.each do |request|  %>
     <div class="message">
-      <img class="avatar-medium" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+      <img class="avatar-medium" src=" <%= cl_image_path request.profile.photo %> ">
+
       <div class="message-name">
-        <h3>Gab Dehan</h3>
-        <p>10/07/17</p>
+        <h3><%= request.profile.first_name%></h3>
+        <p><%= request.created_at %></p>
       </div>
       <div class="message-body">
         <p><strong>I am not sure yet!</strong></p>
@@ -74,11 +45,12 @@
         </p>
       </div>
       <div class="message-status">
-        <p class="status pending">Pending</p>
-        <p class="price">€345</p>
-        <a href="#" class="btn-medium btn-approve"></a>
-        <a href="#" class="btn-medium btn-cancel"></a>
+        <p class="status pending"><%= request.status %></p>
+        <p class="price">€ <%= request.camp_site.price %>  </p>
+        <%= link_to "", approve_booking_path, method: :post, class: "btn-medium btn-approve" %>
+        <%= link_to "", cancel_booking_path, method: :post, class: "btn-medium btn-cancel" %>
       </div>
     </div>
+    <% end %>
   </section>
 </div>
