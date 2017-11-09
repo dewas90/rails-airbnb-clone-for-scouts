@@ -6,9 +6,13 @@
     <p><%= current_user.profile.birth_date %></p>
     <p><%= current_user.profile.gender %></p>
 
-    <button type="button" class="btn btn-outline-secondary">Edit your info</button>
+    <div class="form-group btn-div">
+      <%= link_to 'Edit your info', edit_profile_path, id: "search-btn", class: "btn" %>
+    </div>
   </div>
 </div>
+
+
 
 
 

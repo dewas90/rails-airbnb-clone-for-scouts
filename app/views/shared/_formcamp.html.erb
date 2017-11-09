@@ -1,5 +1,6 @@
 <div class="form_wrapper">
   <div class="container">
+    <div class="forms">
 <% if @camp_site.errors.any? %>
     <div id="error_explanation">
       <ul>
@@ -12,7 +13,11 @@
 
   <%= simple_form_for [@camp_site] do |f| %>
   <%= f.input :title %>
-  <%= f.input :description%>
+  <label class="control-label string required" for="camp_site_description">
+    <abbr title="required">*</abbr>
+    Description
+  </label>
+  <%= f.input :description, label: false, as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5, class: 'response-project'} %>
   <%= f.input :capacity %>
   <%= f.input :category %>
   <%= f.input :address %>
@@ -21,6 +26,7 @@
   <%= f.submit "let's go", class: "btn", id: "btn"%>
   <!-- # render 'shared/button'  -->
 <% end %>
+</div>
 </div>
 </div>
 
