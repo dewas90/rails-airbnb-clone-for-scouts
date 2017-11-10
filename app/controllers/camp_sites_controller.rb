@@ -9,7 +9,7 @@ class CampSitesController < ApplicationController
     if query == ""
       @camp_sites = CampSite.all
     else
-      @camp_sites = CampSite.search(query)
+      @camp_sites = CampSite.search(query.downcase)
     end
     render 'index'
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
