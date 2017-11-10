@@ -6,6 +6,9 @@ gem "geocoder"
 gem "gmaps4rails"
 gem 'country_select'
 
+# data faker
+gem 'faker'
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
