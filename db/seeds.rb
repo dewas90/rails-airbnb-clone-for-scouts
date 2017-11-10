@@ -57,7 +57,7 @@ campsite = CampSite.create(
   zip_code: 1970,
   city: "Wezembeek-Oppem",
   country: "Belgium",
-  photo_urls: %w[http://res.cloudinary.com/dwuowqi7r/image/upload/v1510307702/texucg3kwvc5er4n53ko.jpg],
+  photo_urls: %w[https://picsum.photos/200/300/?random],
   price: 35
   )
 
@@ -102,7 +102,7 @@ puts "Finished third profile"
 # faker
 
 puts 'Creating db through FAKER...'
-10.times do
+10.times do (
   user = User.create(
     email: Faker::Internet.email,
     password: "password")
@@ -118,7 +118,7 @@ puts 'Creating db through FAKER...'
 
   host = Host.create(
     profile_id: profile.id,
-    bank_account: Faker::Bank.iban("be"),
+    bank_account: "BE50 XXXX XXXX XXXX",
     )
 
   campsite = CampSite.create(
@@ -131,7 +131,7 @@ puts 'Creating db through FAKER...'
     zip_code: Faker::Address.zip_code,
     city: Faker::Address.city,
     country: Faker::Address.country,
-    photo_urls: %w[http://res.cloudinary.com/dwuowqi7r/image/upload/v1510307702/texucg3kwvc5er4n53ko.jpg],
+    photo_urls: %w[https://picsum.photos/200/300/?random],
     price: Faker::Number.number(4),
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude
