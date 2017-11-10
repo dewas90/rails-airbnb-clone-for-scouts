@@ -5,7 +5,12 @@ class CampSitesController < ApplicationController
   before_action :set_camp_sites , only: [:show, :edit, :destroy]
 
   def index
-    @camp_sites = CampSite.all
+    @camp_sites = CampSite.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@camp_sites) do |camp_site, marker|
+      marker.lat camp_site.latitude
+      marker.lng camp_site.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def show
