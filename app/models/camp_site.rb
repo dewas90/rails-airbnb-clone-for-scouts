@@ -18,8 +18,7 @@ class CampSite < ApplicationRecord
   validates :country, presence: true
 
   validates :price, presence: true
-
-  validates :photos, presence: true
+  #validates :photos, presence: true
 
   def self.search(query)
     if query.to_i != 0
