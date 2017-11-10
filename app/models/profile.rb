@@ -8,4 +8,8 @@ class Profile < ApplicationRecord
   validates :last_name, presence: true
   validates :photo, presence: true
 
+	def is_host?
+		@host
+	end
+
 end
