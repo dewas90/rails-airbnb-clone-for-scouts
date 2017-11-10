@@ -32,7 +32,7 @@ margin: 0 0 -1px;
 padding: 15px 25px;
 font-weight: 300;
 text-align: center;
-color: #bbb;
+color: black;
 border: 1px solid transparent;
 }
 
@@ -58,8 +58,7 @@ input:checked + label {
 .message {
   display: flex;
   align-items: center;
-  text-align: center;
-  padding: 15px;
+  padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 .message:last-child {
@@ -69,7 +68,7 @@ input:checked + label {
   flex-grow: 1;
 }
 .message-name {
-  padding-left: 6px;
+  padding-left: 10px;
   min-width: 100px;
 }
 .message-name h3 {
@@ -83,12 +82,12 @@ input:checked + label {
   margin-top: 5px;
 }
 .message-body {
-  padding-left: 6px;
+  padding-left: 10px;
   font-size: 13px;
   color: rgba(0,0,0,0.7);
 }
 .message-body {
-  padding-left: 6px;
+  padding-left: 20px;
   color: rgba(0,0,0,0.4);
 }
 .message-body strong{
@@ -102,7 +101,6 @@ input:checked + label {
   font-size: 14px;
   font-weight: bold;
   min-width: 70px;
-  padding-left: 7px;
 }
 .status.accepted {
   color: #04A366;
@@ -134,10 +132,5 @@ input:checked + label {
   display: inline-block;
 }
 
-
-.invisible {
-  height: 0px;
-  width: 400px;
-}
 
 
