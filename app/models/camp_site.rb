@@ -11,7 +11,12 @@ class CampSite < ApplicationRecord
   validates :description, presence: true
   validates :capacity, presence: true
   validates :category, presence: true
+
   validates :address, presence: true
+  validates :zip_code, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
+
   validates :price, presence: true
 
   validates :photos, presence: true

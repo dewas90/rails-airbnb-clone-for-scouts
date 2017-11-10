@@ -65,6 +65,6 @@ class CampSitesController < ApplicationController
   end
 
   def camp_sites_params
-    params.require(:camp_site).permit(:title, :description, :capacity, :category, :address, :price, photos: [])
+    params.require(:camp_site).permit(:title, :description, :capacity, :category, :address, :zip_code, :city, :country, :price, photos: [])
   end
 end

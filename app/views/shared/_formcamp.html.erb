@@ -21,6 +21,9 @@
   <%= f.input :capacity %>
   <%= f.input :category %>
   <%= f.input :address %>
+  <%= f.input :zip_code %>
+  <%= f.input :city %>
+  <%= f.input :country, priority: [ 'FR' ] %>
   <%= f.input :price %>
   <%= f.input :photos, as: :attachinary %>
   <%= f.submit "let's go", class: "btn large", id: "btn"%>
@@ -32,4 +35,3 @@
 
 <%= content_for(:after_js) do %>
 <% end %>
-
