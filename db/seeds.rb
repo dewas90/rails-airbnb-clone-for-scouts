@@ -36,7 +36,7 @@ campsite = CampSite.create(
   description: "Lorem ipsum dolor sit amet, ne purto duis offendit cum, est cu elitr vidisse, suscipit copiosae lucilius ea nam. Ne atqui primis facilisis pri, dictas delectus imperdiet vim id. Cu oblique abhorreant nam, mei ne docendi ancillae. Volumus praesent pro no. Cu vel modus mandamus, fabellas reprehendunt ex vim. Ferri ullum et eam, quo an affert dicant.",
   capacity: 50,
   category: "Plaine",
-  address: "Rue General Wangermee 12, 1040 Etterbeek",
+  address: "Rue de la Faucille 65, 1970 Wezembeek-Oppem",
   photo_urls: %w[http://res.cloudinary.com/dwuowqi7r/image/upload/v1510307702/texucg3kwvc5er4n53ko.jpg],
   price: 35
   )
