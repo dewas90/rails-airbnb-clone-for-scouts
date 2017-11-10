@@ -29,6 +29,8 @@ class BookingsController < ApplicationController
     @booking.camp_site.booked = false
     @booking.status = "canceled"
     @booking.camp_site.save
+
+    @booking.save
     redirect_to profile_path(current_user)
   end
 
