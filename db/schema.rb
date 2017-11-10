@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110115024) do
+ActiveRecord::Schema.define(version: 20171110135009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(version: 20171110115024) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "booked",      default: false
+    t.string   "zip_code"
+    t.string   "city"
+    t.string   "country"
     t.index ["host_id"], name: "index_camp_sites_on_host_id", using: :btree
   end
 

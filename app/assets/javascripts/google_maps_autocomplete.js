@@ -6,6 +6,13 @@ function onPlaceChanged() {
   camp_siteAddress.blur();
   camp_siteAddress.value = components.address;
 
+  document.getElementById('camp_site_zip_code').value = components.zip_code;
+  document.getElementById('camp_site_city').value = components.city;
+
+  if (components.country_code) {
+    var selector = '#camp_site_country option[value="' + components.country_code + '"]';
+    document.querySelector(selector).selected = true;
+  }
 }
 
 function getAddressComponents(place) {
