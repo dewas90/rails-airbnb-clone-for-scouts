@@ -1,12 +1,18 @@
+
     <div class="container">
       <div class="profile text-center">
         <div class="main">
           <div class="main-content">
-            <img src=" <%= cl_image_path current_user.profile.photo%> " alt="" width="150" class="avatar-large">
+            <img src=" <%= @camp_site.host.profile.photo%> " alt="" width="150" class="avatar-large">
             <h2><%= @camp_site.host.profile.first_name %></h2>
             <p><%= @camp_site.address %></p>
-            <%=  simple_form_for [@camp_site, Booking.new] do |f| %>
-              <%= f.submit "BOOK NOW", class: "btn" %>
+            <% if @camp_site.booked === true %>
+              <h2> sorry, but this campsite is already booked </h2>
+              <%= link_to 'View other Camps', camp_sites_path, id: "search-btn", class: "btn" %>
+                <% else %>
+                  <%=  simple_form_for [@camp_site, Booking.new] do |f| %>
+                  <%= f.submit "BOOK NOW", class: "btn large" %>
+            <% end %>
             <% end %>
           </div>
         </div>
