@@ -1,3 +1,6 @@
-<%= render 'shared/card', camp_site: CampSite.find(params[:id]) %>
-<%= render 'shared/info', camp_site: CampSite.find(params[:id]) %>
 
+<%= render 'shared/carousel', camp_site: @camp_site %>
+<div class="container">
+<%= render 'shared/info', camp_site: @camp_site %>
+
+</div>
