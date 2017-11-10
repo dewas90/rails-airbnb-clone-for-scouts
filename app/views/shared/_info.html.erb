@@ -6,7 +6,7 @@
             <img src=" <%= @camp_site.host.profile.photo%> " alt="" width="150" class="avatar-large">
             <h2><%= @camp_site.host.profile.first_name %></h2>
             <p><%= @camp_site.address %></p>
-            <% if @camp_site.booked === true%>
+            <% if @camp_site.booked === true %>
               <h2> sorry, but this campsite is already booked </h2>
               <%= link_to 'View other Camps', camp_sites_path, id: "search-btn", class: "btn" %>
                 <% else %>

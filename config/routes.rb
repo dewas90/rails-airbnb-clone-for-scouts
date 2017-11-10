@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :hosts, only: [:show, :new, :create, :edit, :update]
 
+  get 'camp_sites/search/:q', to:'camp_sites#search', as: :search
 
 end
 
