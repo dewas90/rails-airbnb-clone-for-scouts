@@ -1,44 +1,39 @@
-<div class="navbar-minimalist">
-
+<div class="profile text-center">
+  <div class="main">
+    <div class="main-content">
+      <img src=" <%= cl_image_path current_user.profile.photo%> " alt="" width="150" class="img-circle">
+      <h2><%= @camp_site.host.profile.first_name %></h2>
+      <p><%= @camp_site.address %></p>
+      <%=  simple_form_for [@camp_site, Booking.new] do |f| %>
+        <%= f.submit "BOOK NOW", class: "btn" %>
+      <% end %>
     </div>
-
-    <div class="container">
-      <div class="profile text-center">
-        <div class="main">
-          <div class="main-content">
-            <img src=" <%= cl_image_path current_user.profile.photo%> " alt="" width="150" class="img-circle">
-            <h2><%= @camp_site.host.profile.first_name %></h2>
-            <p><%= @camp_site.address %></p>
-            <%=  simple_form_for [@camp_site, Booking.new] do |f| %>
-              <%= f.submit "BOOK NOW", class: "btn" %>
-            <% end %>
-          </div>
-        </div>
-        <div class="stat">
-          <div class="stat-content">
-            <h3><%= camp_site.price %></h3>
-            <p>Price</p>
-          </div>
-        </div>
-        <div class="stat">
-          <div class="stat-content">
-            <h3><%= camp_site.capacity %></h3>
-            <p>capacity</p>
-          </div>
-          </div>
-        <div class="stat">
-          <div class="stat-content">
-            <h3><%= @camp_site.category %></h3>
-            <p>category</p>
-          </div>
-          </div>
-        <div class="description">
-          <div class="description-content">
-            <h3>More about the camp</h3>
-            <p class="text-justify">
-              <%= @camp_site.description %>
-            </p>
-          </div>
-        </div>
-      </div>
+  </div>
+  <div class="stat">
+    <div class="stat-content">
+      <h3><%= camp_site.price %></h3>
+      <p>Price</p>
     </div>
+  </div>
+  <div class="stat">
+    <div class="stat-content">
+      <h3><%= camp_site.capacity %></h3>
+      <p>capacity</p>
+    </div>
+    </div>
+  <div class="stat">
+    <div class="stat-content">
+      <h3><%= @camp_site.category %></h3>
+      <p>category</p>
+    </div>
+    </div>
+  <div class="description">
+    <div class="description-content">
+      <h3>More about the camp</h3>
+      <p class="text-justify">
+        <%= @camp_site.description %>
+      </p>
+    </div>
+  </div>
+</div>
+</div>
