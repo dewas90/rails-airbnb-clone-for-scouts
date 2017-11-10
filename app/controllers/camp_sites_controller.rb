@@ -18,9 +18,9 @@ class CampSitesController < ApplicationController
 
 
   def index
-    @camp_sites = CampSite.all
-    @camp_sites_geo = CampSite.where.not(latitude: nil, longitude: nil)
-    @hash = Gmaps4rails.build_markers(@camp_sites_geo) do |camp_site, marker|
+      @camp_sites = CampSite.all
+      @camp_sites_geo = CampSite.where.not(latitude: nil, longitude: nil)
+      @hash = Gmaps4rails.build_markers(@camp_sites_geo) do |camp_site, marker|
       marker.lat camp_site.latitude
       marker.lng camp_site.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
