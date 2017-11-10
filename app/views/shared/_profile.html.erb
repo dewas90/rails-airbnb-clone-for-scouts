@@ -3,13 +3,13 @@
   <div class="profile-info">
     <h3>Your profile</h3>
     <hr>
-    <h4>Name: <%= current_user.profile.first_name %> <%= current_user.profile.last_name %> </h4>
+    <h4><strong>NAME    </strong><%= current_user.profile.first_name %> <%= current_user.profile.last_name %> </h4>
     <hr>
-    <h4>email: <%= current_user.profile.user.email %></h4>
+    <h4><strong>EMAIL   </strong><%= current_user.profile.user.email %></h4>
     <hr>
-    <h4>birth-date: <%= current_user.profile.birth_date %></h4>
+    <h4><strong>BIRTH DATE    </strong><%= current_user.profile.birth_date %></h4>
     <hr>
-    <h4>gender: <%= current_user.profile.gender %></h4>
+    <h4><strong>GENDER    </strong><%= current_user.profile.gender %></h4>
     <div class="form-group btn-div">
       <%= link_to 'Edit your info', edit_profile_path, id: "search-btn", class: "btn" %>
     </div>
