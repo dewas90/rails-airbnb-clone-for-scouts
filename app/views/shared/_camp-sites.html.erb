@@ -1,6 +1,5 @@
 <div class="camp-sites-card-body">
   <h4>Camp sites</h4>
-
   <% current_user.profile.host.camp_sites.each do |camp_site| %>
     <div class="message">
       <img class="avatar-square" src="<%= cl_image_path camp_site.photos.first.path %>">
