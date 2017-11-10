@@ -28,6 +28,7 @@
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  margin-left: 15px;
 }
 
 /* Right section */
@@ -44,7 +45,7 @@
 }
 
 /* Navbar link */
-.navbar-wagon-link {
+.navbar-wagon-right a {
   font-family: "Open Sans", "Helvetica", "sans-serif" !important;
   color: #616668 !important;
   font-size: 14px !important;

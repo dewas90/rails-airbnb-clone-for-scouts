@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109142205) do
+ActiveRecord::Schema.define(version: 20171110115024) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,13 +50,13 @@ ActiveRecord::Schema.define(version: 20171109142205) do
     t.integer  "capacity"
     t.string   "category"
     t.string   "address"
-    t.string   "picture"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "photo"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "booked",      default: false
     t.index ["host_id"], name: "index_camp_sites_on_host_id", using: :btree
   end
 

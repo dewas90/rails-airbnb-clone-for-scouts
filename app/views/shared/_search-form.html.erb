@@ -1,4 +1,19 @@
-<form class="col-md-12" action="#">
+
+<%= simple_form_for :search, url: search_path(:search), :method => :get  do |f| %>
+  <%= f.input :query , placeholder: "you can enter an attribute or nothing if you want to display all", label: false %>
+  <%= f.submit "Search", class: "btn large" %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+<!-- <form class="col-md-12" action="#">
    			<div class="form-group">
    				<label for="city">Select a camp region</label>
    				<input type="city" class="form-control" id="city" placeholder="Wallonie">
@@ -42,11 +57,11 @@
    				</div>
    				<div class=" col-xs-12 col-sm-3 col-md-3">
    					<div class="form-group btn-div">
-              <%= link_to 'Search', camp_sites_path, id: "search-btn", class: "btn" %>
+              link_to 'Search', camp_sites_path, id: "search-btn", class: "btn"
    					</div>
    				</div>
    			</div>
-   		</form>
+   		</form> -->
 
 
 <!-- <div class="col-xs-3">
