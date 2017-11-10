@@ -58,7 +58,8 @@ input:checked + label {
 .message {
   display: flex;
   align-items: center;
-  padding: 20px;
+  text-align: center;
+  padding: 15px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 .message:last-child {
@@ -68,7 +69,7 @@ input:checked + label {
   flex-grow: 1;
 }
 .message-name {
-  padding-left: 10px;
+  padding-left: 6px;
   min-width: 100px;
 }
 .message-name h3 {
@@ -82,12 +83,12 @@ input:checked + label {
   margin-top: 5px;
 }
 .message-body {
-  padding-left: 10px;
+  padding-left: 6px;
   font-size: 13px;
   color: rgba(0,0,0,0.7);
 }
 .message-body {
-  padding-left: 20px;
+  padding-left: 6px;
   color: rgba(0,0,0,0.4);
 }
 .message-body strong{
@@ -101,6 +102,7 @@ input:checked + label {
   font-size: 14px;
   font-weight: bold;
   min-width: 70px;
+  padding-left: 7px;
 }
 .status.accepted {
   color: #04A366;

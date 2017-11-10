@@ -1,3 +1,4 @@
+
 .banner-carousel{
     height: 60vh;
     background-size: cover !important;
@@ -31,6 +32,9 @@
   .w3-right,
   .w3-badge{
     cursor:pointer;
+    color: white;
+    opacity: 0.5;
+    font-size: 50px;
   }
   .w3-badge {
     height:13px;
@@ -38,10 +42,13 @@
     padding:5px;
   }
   .w3-right{
-    position: right;
+    position: absolute;
+    right: 5%;
+    bottom: 200%;
   }
   .w3-left{
-    position: left;
-
+    position: absolute;
+    left: 5%;
+    bottom: 200%;
   }
 }

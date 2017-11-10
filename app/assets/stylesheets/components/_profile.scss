@@ -2,10 +2,15 @@
   width: 130px;
 }
 .profile-info{
-  p{
-    text-align: left;
+  h4{
+    text-align: center;
     padding-left: 70px;
     padding-right: 70px;
+    font-weight: lighter;
+    text-transform: none;
+    strong{
+    text-align: left;
+    }
   }
 }
 .profile-card-body{
@@ -13,4 +18,3 @@
   padding: 10px 10px 10px 10px;
   flex-grow: 1;
 }
-
