@@ -26,7 +26,10 @@ class BookingsController < ApplicationController
   end
 
   def cancel
+    @booking.camp_site.booked = false
     @booking.status = "canceled"
+    @booking.camp_site.save
+
     @booking.save
     redirect_to profile_path(current_user)
   end
@@ -34,8 +37,10 @@ class BookingsController < ApplicationController
   private
   def create_booking
    @camp_site = CampSite.find(params[:camp_site_id])
-    @host = @camp_site.host
-    @booking = Booking.new(camp_site:@camp_site, host:@host, profile:current_user.profile)
+   @camp_site.booked = true
+   @host = @camp_site.host
+   @booking = Booking.new(camp_site:@camp_site, host:@host, profile:current_user.profile)
+   @camp_site.save
   end
 
   def set_bookings
